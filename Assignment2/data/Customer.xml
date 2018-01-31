@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE roles SYSTEM "roles.dtd">
+<roles>
+      <FirstName>Joel</FirstName>
+      <LastName>Eckloff</LastName>
+      <Address> Anywhere St, Anytown, TX, 76452,USA</Address>
+      <Code>G</Code>
+      <ID>C76FG2T</ID>
+      <Type>G</Type>
+</roles>

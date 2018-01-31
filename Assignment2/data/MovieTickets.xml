@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE roles SYSTEM "roles.dtd">
+<roles>
+      <Name> World's end</Name>
+      <Price>7.0</Price>
+      <Code>89JTHI</Code>
+      <DateTime>Sep, 10,2016, 1900</DateTime>
+      <Address>123 Main st,Lincoln,NE,68508,USA</Address>
+      <ScreenNumber>3</ScreenNumber>
+</roles>

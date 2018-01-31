@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE roles SYSTEM "roles.dtd">
+<roles>
+      <Name>John,Doe</Name>
+      <Price>100.0</Price>
+      <Code>GT6HI9</Code>
+      <StartDate>Sep, 9,2015</StartDate>
+      <EndDate>Sep 9,2016</EndDate>
+</roles>
