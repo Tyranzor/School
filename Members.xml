@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<containers.Member>
+  <type>S</type>
+  <memberCode>M001</memberCode>
+  <primaryContactCode>231a</primaryContactCode>
+  <name>Bob,Jim</name>
+  <address>
+    <street>378 Hamburger Rd</street>
+    <city>Lincoln</city>
+    <state>NE</state>
+    <country>USA</country>
+    <zip>68508</zip>
+  </address>
+</containers.Member><containers.Member>
+  <type>G</type>
+  <memberCode>M002</memberCode>
+  <primaryContactCode>992s</primaryContactCode>
+  <name>Potato Incorporated</name>
+  <address>
+    <street>392 Happy Way</street>
+    <city>Lincoln</city>
+    <state>NE</state>
+    <country>USA</country>
+    <zip>68508</zip>
+  </address>
+</containers.Member><containers.Member>
+  <type>G</type>
+  <memberCode>M003</memberCode>
+  <primaryContactCode>322p</primaryContactCode>
+  <name>Generic Business Entity</name>
+  <address>
+    <street>293 Generic St.</street>
+    <city>Los Angeles</city>
+    <state>CA</state>
+    <country>USA</country>
+    <zip>90230</zip>
+  </address>
+</containers.Member><containers.Member>
+  <type>S</type>
+  <memberCode>M004</memberCode>
+  <primaryContactCode>321f</primaryContactCode>
+  <name>Garth Brooks</name>
+  <address>
+    <street>8292 Red Rd</street>
+    <city>Detroit</city>
+    <state>MI</state>
+    <country>USA</country>
+    <zip>83920</zip>
+  </address>
+</containers.Member>

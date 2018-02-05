@@ -1,0 +1,52 @@
+{
+  "type": "S",
+  "memberCode": "M001",
+  "primaryContactCode": "231a",
+  "name": "Bob,Jim",
+  "address": {
+    "street": "378 Hamburger Rd",
+    "city": "Lincoln",
+    "state": "NE",
+    "country": "USA",
+    "zip": "68508"
+  }
+}
+{
+  "type": "G",
+  "memberCode": "M002",
+  "primaryContactCode": "992s",
+  "name": "Potato Incorporated",
+  "address": {
+    "street": "392 Happy Way",
+    "city": "Lincoln",
+    "state": "NE",
+    "country": "USA",
+    "zip": "68508"
+  }
+}
+{
+  "type": "G",
+  "memberCode": "M003",
+  "primaryContactCode": "322p",
+  "name": "Generic Business Entity",
+  "address": {
+    "street": "293 Generic St.",
+    "city": "Los Angeles",
+    "state": "CA",
+    "country": "USA",
+    "zip": "90230"
+  }
+}
+{
+  "type": "S",
+  "memberCode": "M004",
+  "primaryContactCode": "321f",
+  "name": "Garth Brooks",
+  "address": {
+    "street": "8292 Red Rd",
+    "city": "Detroit",
+    "state": "MI",
+    "country": "USA",
+    "zip": "83920"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "lastName": "Smith",
+  "personCode": "944c",
+  "emaillist": "timothy34@gmail.com",
+  "address": {
+    "street": "4987 Camden Place",
+    "city": "Charleston",
+    "state": "SC",
+    "country": "USA",
+    "zip": "29403"
+  },
+  "firstName": " Timothy"
+}
+{
+  "lastName": "Chan",
+  "personCode": "306a",
+  "emaillist": "ruby_chan@gmail.com,rubychan@yahoo.com",
+  "address": {
+    "street": "1563 Denver Avenue",
+    "city": "Riverside",
+    "state": "CA",
+    "country": "USA",
+    "zip": "92501"
+  },
+  "firstName": " Ruby"
+}
+{
+  "lastName": "Timmons",
+  "personCode": "55bb",
+  "emaillist": "timmons_joseph@yahoo.com",
+  "address": {
+    "street": "4261 Wildrose Lane",
+    "city": "Detroit",
+    "state": "MI",
+    "country": "USA",
+    "zip": "48219"
+  },
+  "firstName": " Joseph"
+}
+{
+  "lastName": "Kelly",
+  "personCode": "2342",
+  "address": {
+    "street": "4611 Burnside Court",
+    "city": "Phoenix",
+    "state": "AZ",
+    "country": "USA",
+    "zip": "85003"
+  },
+  "firstName": " Charles"
+}

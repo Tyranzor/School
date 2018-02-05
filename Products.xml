@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<containers.YearLongMembership>
+  <startDate>2015-03-12</startDate>
+  <endDate>2018-02-11</endDate>
+  <address>
+    <street>143 Charleston St.</street>
+    <city>Lincoln</city>
+    <state>NE</state>
+    <country>USA</country>
+    <zip>68508</zip>
+  </address>
+  <membershipName>Standard Package</membershipName>
+</containers.YearLongMembership><containers.DayMembership>
+  <address>
+    <street>9032 Samson Drive</street>
+    <city>Omaha</city>
+    <state> NE</state>
+    <country> USA</country>
+    <zip> 68144</zip>
+  </address>
+  <dateTime>2017-05-13 10:15</dateTime>
+</containers.DayMembership><containers.EquipmentRental>
+  <name>Jump Rope</name>
+</containers.EquipmentRental><containers.ParkingPass/>

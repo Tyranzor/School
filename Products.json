@@ -1,0 +1,26 @@
+{
+  "startDate": "2015-03-12",
+  "endDate": "2018-02-11",
+  "address": {
+    "street": "143 Charleston St.",
+    "city": "Lincoln",
+    "state": "NE",
+    "country": "USA",
+    "zip": "68508"
+  },
+  "membershipName": "Standard Package"
+}
+{
+  "address": {
+    "street": "9032 Samson Drive",
+    "city": "Omaha",
+    "state": " NE",
+    "country": " USA",
+    "zip": " 68144"
+  },
+  "dateTime": "2017-05-13 10:15"
+}
+{
+  "name": "Jump Rope"
+}
+{}
