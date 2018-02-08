@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<containers.Member>
+  <type>S</type>
+  <memberCode>M001</memberCode>
+  <primaryContact>
+    <lastName>Kelly</lastName>
+    <personCode>2342</personCode>
+    <address>
+      <street>4611 Burnside Court</street>
+      <city>Phoenix</city>
+      <state>AZ</state>
+      <country>USA</country>
+      <zip>85003</zip>
+    </address>
+    <firstName> Charles</firstName>
+  </primaryContact>
+  <name>Bob,Jim</name>
+  <address>
+    <street>378 Hamburger Rd</street>
+    <city>Lincoln</city>
+    <state>NE</state>
+    <country>USA</country>
+    <zip>68508</zip>
+  </address>
+</containers.Member><containers.Member>
+  <type>G</type>
+  <memberCode>M002</memberCode>
+  <primaryContact>
+    <lastName>Timmons</lastName>
+    <personCode>55bb</personCode>
+    <emaillist>timmons_joseph@yahoo.com</emaillist>
+    <address>
+      <street>4261 Wildrose Lane</street>
+      <city>Detroit</city>
+      <state>MI</state>
+      <country>USA</country>
+      <zip>48219</zip>
+    </address>
+    <firstName> Joseph</firstName>
+  </primaryContact>
+  <name>Potato Incorporated</name>
+  <address>
+    <street>392 Happy Way</street>
+    <city>Lincoln</city>
+    <state>NE</state>
+    <country>USA</country>
+    <zip>68508</zip>
+  </address>
+</containers.Member><containers.Member>
+  <type>G</type>
+  <memberCode>M003</memberCode>
+  <primaryContact>
+    <lastName>Chan</lastName>
+    <personCode>306a</personCode>
+    <emaillist>ruby_chan@gmail.com,rubychan@yahoo.com</emaillist>
+    <address>
+      <street>1563 Denver Avenue</street>
+      <city>Riverside</city>
+      <state>CA</state>
+      <country>USA</country>
+      <zip>92501</zip>
+    </address>
+    <firstName> Ruby</firstName>
+  </primaryContact>
+  <name>Generic Business Entity</name>
+  <address>
+    <street>293 Generic St.</street>
+    <city>Los Angeles</city>
+    <state>CA</state>
+    <country>USA</country>
+    <zip>90230</zip>
+  </address>
+</containers.Member><containers.Member>
+  <type>S</type>
+  <memberCode>M004</memberCode>
+  <primaryContact>
+    <lastName>Smith</lastName>
+    <personCode>944c</personCode>
+    <emaillist>timothy34@gmail.com</emaillist>
+    <address>
+      <street>4987 Camden Place</street>
+      <city>Charleston</city>
+      <state>SC</state>
+      <country>USA</country>
+      <zip>29403</zip>
+    </address>
+    <firstName> Timothy</firstName>
+  </primaryContact>
+  <name>Garth Brooks</name>
+  <address>
+    <street>8292 Red Rd</street>
+    <city>Detroit</city>
+    <state>MI</state>
+    <country>USA</country>
+    <zip>83920</zip>
+  </address>
+</containers.Member>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<person>
+  <lastName>Smith</lastName>
+  <personCode>944c</personCode>
+  <emaillist>timothy34@gmail.com</emaillist>
+  <address>
+    <street>4987 Camden Place</street>
+    <city>Charleston</city>
+    <state>SC</state>
+    <country>USA</country>
+    <zip>29403</zip>
+  </address>
+  <firstName> Timothy</firstName>
+</person><person>
+  <lastName>Chan</lastName>
+  <personCode>306a</personCode>
+  <emaillist>ruby_chan@gmail.com,rubychan@yahoo.com</emaillist>
+  <address>
+    <street>1563 Denver Avenue</street>
+    <city>Riverside</city>
+    <state>CA</state>
+    <country>USA</country>
+    <zip>92501</zip>
+  </address>
+  <firstName> Ruby</firstName>
+</person><person>
+  <lastName>Timmons</lastName>
+  <personCode>55bb</personCode>
+  <emaillist>timmons_joseph@yahoo.com</emaillist>
+  <address>
+    <street>4261 Wildrose Lane</street>
+    <city>Detroit</city>
+    <state>MI</state>
+    <country>USA</country>
+    <zip>48219</zip>
+  </address>
+  <firstName> Joseph</firstName>
+</person><person>
+  <lastName>Kelly</lastName>
+  <personCode>2342</personCode>
+  <address>
+    <street>4611 Burnside Court</street>
+    <city>Phoenix</city>
+    <state>AZ</state>
+    <country>USA</country>
+    <zip>85003</zip>
+  </address>
+  <firstName> Charles</firstName>
+</person><person>
+  <lastName>Smith</lastName>
+  <personCode>944c</personCode>
+  <emaillist>timothy34@gmail.com</emaillist>
+  <address>
+    <street>4987 Camden Place</street>
+    <city>Charleston</city>
+    <state>SC</state>
+    <country>USA</country>
+    <zip>29403</zip>
+  </address>
+  <firstName> Timothy</firstName>
+</person><person>
+  <lastName>Chan</lastName>
+  <personCode>306a</personCode>
+  <emaillist>ruby_chan@gmail.com,rubychan@yahoo.com</emaillist>
+  <address>
+    <street>1563 Denver Avenue</street>
+    <city>Riverside</city>
+    <state>CA</state>
+    <country>USA</country>
+    <zip>92501</zip>
+  </address>
+  <firstName> Ruby</firstName>
+</person><person>
+  <lastName>Timmons</lastName>
+  <personCode>55bb</personCode>
+  <emaillist>timmons_joseph@yahoo.com</emaillist>
+  <address>
+    <street>4261 Wildrose Lane</street>
+    <city>Detroit</city>
+    <state>MI</state>
+    <country>USA</country>
+    <zip>48219</zip>
+  </address>
+  <firstName> Joseph</firstName>
+</person><person>
+  <lastName>Kelly</lastName>
+  <personCode>2342</personCode>
+  <address>
+    <street>4611 Burnside Court</street>
+    <city>Phoenix</city>
+    <state>AZ</state>
+    <country>USA</country>
+    <zip>85003</zip>
+  </address>
+  <firstName> Charles</firstName>
+</person>

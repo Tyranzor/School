@@ -1,0 +1,99 @@
+{
+  "type": "S",
+  "memberCode": "M001",
+  "primaryContact": {
+    "lastName": "Kelly",
+    "personCode": "2342",
+    "address": {
+      "street": "4611 Burnside Court",
+      "city": "Phoenix",
+      "state": "AZ",
+      "country": "USA",
+      "zip": "85003"
+    },
+    "firstName": " Charles"
+  },
+  "name": "Bob,Jim",
+  "address": {
+    "street": "378 Hamburger Rd",
+    "city": "Lincoln",
+    "state": "NE",
+    "country": "USA",
+    "zip": "68508"
+  }
+}
+{
+  "type": "G",
+  "memberCode": "M002",
+  "primaryContact": {
+    "lastName": "Timmons",
+    "personCode": "55bb",
+    "emaillist": "timmons_joseph@yahoo.com",
+    "address": {
+      "street": "4261 Wildrose Lane",
+      "city": "Detroit",
+      "state": "MI",
+      "country": "USA",
+      "zip": "48219"
+    },
+    "firstName": " Joseph"
+  },
+  "name": "Potato Incorporated",
+  "address": {
+    "street": "392 Happy Way",
+    "city": "Lincoln",
+    "state": "NE",
+    "country": "USA",
+    "zip": "68508"
+  }
+}
+{
+  "type": "G",
+  "memberCode": "M003",
+  "primaryContact": {
+    "lastName": "Chan",
+    "personCode": "306a",
+    "emaillist": "ruby_chan@gmail.com,rubychan@yahoo.com",
+    "address": {
+      "street": "1563 Denver Avenue",
+      "city": "Riverside",
+      "state": "CA",
+      "country": "USA",
+      "zip": "92501"
+    },
+    "firstName": " Ruby"
+  },
+  "name": "Generic Business Entity",
+  "address": {
+    "street": "293 Generic St.",
+    "city": "Los Angeles",
+    "state": "CA",
+    "country": "USA",
+    "zip": "90230"
+  }
+}
+{
+  "type": "S",
+  "memberCode": "M004",
+  "primaryContact": {
+    "lastName": "Smith",
+    "personCode": "944c",
+    "emaillist": "timothy34@gmail.com",
+    "address": {
+      "street": "4987 Camden Place",
+      "city": "Charleston",
+      "state": "SC",
+      "country": "USA",
+      "zip": "29403"
+    },
+    "firstName": " Timothy"
+  },
+  "name": "Garth Brooks",
+  "address": {
+    "street": "8292 Red Rd",
+    "city": "Detroit",
+    "state": "MI",
+    "country": "USA",
+    "zip": "83920"
+  }
+}
