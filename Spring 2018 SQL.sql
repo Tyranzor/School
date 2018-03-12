@@ -1,4 +1,3 @@
-
 drop table if exists DayMembership;
 drop table if exists ParkingPass;
 drop table if exists YearMembership;
@@ -25,6 +24,7 @@ create table Person (
     foreign key (address) references Address (id), 
     emails varchar(255)
 );
+create unique index Persons on Person (personCode,firstName,lastName);
 create table Member ( 
 	memberCode varchar(255) unique not null, 
     Primary key (memberCode), 
@@ -35,6 +35,7 @@ create table Member (
     memName varchar(255), 
     memType varchar(1)
 );
+create unique index Members on Member (memberCode, person, memName);
 create table Invoice (
 	invoiceCode varchar (255) unique not null, 
 	Primary key (invoiceCode), 
@@ -52,6 +53,7 @@ create table Invoice (
     check (tax>0),
     check (subtotal>0)
 );
+create unique index Invoices on Invoice (invoiceCode, member, personalTrainer);
 create table ParkingPass ( 
 	ID int (11) AUTO_INCREMENT not null,
     invoiceCode varchar(255), 
@@ -73,6 +75,7 @@ create table ParkingPass (
     check (subtotal>0)
     
 );
+create unique index pPass on ParkingPass (invoiceCode,productCode);
 create table EquipmentRental (
 		ID int (11) AUTO_INCREMENT not null,
 		invoiceCode varchar(255), 
@@ -94,7 +97,7 @@ create table EquipmentRental (
 		check (tax>0),
 		check (subtotal>0)
 );
-create unique index Rentals on EquipmentRental (invoiceCode,productCode,id,rentalName,quantity);
+create unique index Rentals on EquipmentRental (invoiceCode,productCode,id,rentalName);
 create table DayMembership (
 	ID int (11) AUTO_INCREMENT not null,
 	invoiceCode varchar(255), 
@@ -115,6 +118,8 @@ create table DayMembership (
     check (tax>0),
     check (subtotal>0)
 );
+create unique index dPass on DayMembership (invoiceCode,productCode);
+
 create table YearMembership (
 	ID int (11) AUTO_INCREMENT not null,
 	invoiceCode varchar(255), 
@@ -137,6 +142,8 @@ create table YearMembership (
     check (tax>0),
     check (subtotal>0)
 );
+create unique index Years on YearMembership (invoiceCode,productCode, membershipName);
+
 
 -- Population queries
 
@@ -279,20 +286,20 @@ total,tax,discount,identifier,subtotal,timeDate) values (
 (select invoiceCode from Invoice where  invoiceCode= ''), 1, 'hello',(select street from Address where Street =''),
 0.00,0.00,0.00,'P', 0.00,2018-09-23);
 -- 8
-select (subtotal/quantity) from YearMemberhsip;
+select (subtotal/quantity) from YearMembership;
 -- 9
-select * from YearMembership where timeDate='';
+select * from YearMembership where timeDateStart='';
 -- 10 
 select * from Invoice order by personalTrainer;
 -- 11
 select * from Invoice where InvoiceCode = (Select invoiceCode from YearMembership where productCode ='');
 -- 12
-select sum(total) from YearMembership where timeDate= '';
+select sum(total) from YearMembership where timeDateStart= '';
 -- 13
 select(select sum(quantity) from ParkingPass) + (select sum(quantity) from EquipmentRental);
 -- 14
-select * from YearMembership where incvoiceCode='' having count >1;
-select * from DayMembership where incvoiceCode='' having count >1;
+select * from YearMembership where invoiceCode='' having count(*)>1;
+select * from DayMembership where invoiceCode='' having count(*)>1;
 -- 15
 select * from Invoice where member=PersonalTrainer;
 -- end
