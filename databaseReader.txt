@@ -1,0 +1,334 @@
+/**
+ * 
+ */
+package readersWriters;
+
+/**
+ * @author Nathan
+ *
+ */
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+/*
+ * This is a collection of utility methods that define a general API for
+ * interacting with the database supporting this application.
+ * 16 methods in total, add more if required.
+ * Do not change any method signatures or the package name.
+ * 
+ */
+
+import containers.DayMembership;
+import containers.Invoice;
+import containers.Member;
+import containers.ParkingPass;
+import containers.Person;
+import containers.Address;
+import containers.Asset;
+import containers.EquipmentRental;
+import containers.YearLongMembership;
+import log4j.log4j;
+public class databaseReader {
+
+	/**
+	 * Class to read data from Database and construct Java objects 
+	 */
+	static Connection conn = null;
+	static Statement stmt = null;
+	
+	//JDBC driver name and database URL
+	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+	static final String DB_URL = "jdbc:mysql://cse.unl.edu:3306/jtrost";
+	
+	//Database login info
+	static final String USER = "jtrost";
+	static final String PASS = "YGVud5";
+	
+	private static ArrayList<Invoice> invoiceList= new ArrayList<Invoice>();
+	private static ArrayList<Person> personList = new ArrayList<Person>();
+	private static ArrayList<Member> memberList= new ArrayList<Member>();
+	private static ArrayList<Address> addressList= new ArrayList<Address>();
+	private static HashMap <String, Asset> assetMap= new HashMap<String, Asset>();
+	private static log4j errorLogger= new log4j();
+	
+	 /**
+	  * processes data from the database based on the returned results from 
+	  * subsequent methods
+	  */
+	
+	public databaseReader() {
+		
+		
+		
+	}
+	
+	
+	public static ResultSet getTable (String tableName){
+			 
+		
+
+		   //  Database credentials
+			Statement stmt=null;
+			Connection conn=null;
+			 ResultSet rs= null;
+			try{
+				
+			    //STEP 2: Register JDBC driver 
+			    Class.forName("com.mysql.jdbc.Driver");
+
+			    //STEP 3: Open a connection
+			    conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+			    //STEP 4: Execute a query
+			    stmt = conn.createStatement();
+			    
+			//retrieves customer type from customer code
+			    String sql="SELECT * FROM "+tableName;
+			     rs = stmt.executeQuery(sql);}
+			catch (Exception e){
+				e.printStackTrace();
+				errorLogger.log(e);
+			}
+			return rs;
+	}
+
+
+public static void getPersons () throws SQLException{
+	ResultSet persons= getTable("Person");
+	getAddress();
+	Address a=null;
+		while (persons.next()){
+				try{
+				
+			    //STEP 2: Register JDBC driver 
+			    Class.forName("com.mysql.jdbc.Driver");
+
+			    //STEP 3: Open a connection
+			    conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+			    //STEP 4: Execute a query
+			    stmt = conn.createStatement();
+			    
+			//retrieves customer type from customer code
+			   String sql="SELECT street FROM Address where id= "+persons.getInt("address");
+			    ResultSet rs = stmt.executeQuery(sql);
+			    while (rs.next()){
+			    
+			    for (Address add:addressList){
+			    	if((rs.getString("street")).contentEquals(add.getStreet())){
+			    	a=add;	
+			    	System.out.println("success");}
+			    	}
+			    }
+			    }
+			catch (Exception e){
+				e.printStackTrace();
+				errorLogger.log(e);
+			}
+
+				if (persons.getString("emails")!=null){
+					Person p= new Person(persons.getString("lastName"),persons.getString("personCode"),persons.getString("emails"),a, persons.getString("firstName"));
+					personList.add(p);
+				}
+				else {
+					Person p= new Person(persons.getString("lastName"),persons.getString("personCode"),a, persons.getString("firstName"));
+					personList.add(p);
+
+				}
+		}
+	
+	
+	}
+
+
+/**
+ * retrieves all address data from database and builds appopriate objects
+ * @throws SQLException
+ */
+public static void getAddress() throws SQLException{
+	ResultSet addresses= getTable("Address");
+	while (addresses.next()){
+		Address a = new Address (addresses.getString("street"),addresses.getString("city"),addresses.getString("state"),addresses.getString("country"),addresses.getString("zip"));
+		addressList.add(a);
+	}
+}
+
+public static void getMembers() throws SQLException{
+	ResultSet members= getTable("Member");
+	Address a=null;
+	Person trainer=null;
+	while (members.next()){
+		try{
+			
+		    //STEP 2: Register JDBC driver 
+		    Class.forName("com.mysql.jdbc.Driver");
+
+		    //STEP 3: Open a connection
+		    conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+		    //STEP 4: Execute a query
+		    stmt = conn.createStatement();
+		    
+		//retrieves customer type from customer code
+		   String sql="SELECT street FROM Address where id= "+members.getInt("address");
+		    ResultSet rs = stmt.executeQuery(sql);
+		    while (rs.next()){
+		    
+		    for (Address add:addressList){
+		    	if((rs.getString("street")).contentEquals(add.getStreet())){
+		    	a=add;	
+		    	System.out.println("success");}
+		    	}
+		    }
+		    }
+		catch (Exception e){
+			e.printStackTrace();
+			errorLogger.log(e);
+		}
+		for (Person P:personList){
+			if (members.getString("person").contentEquals(P.getPersonCode())){
+				trainer=P;
+			}
+		}
+		Member m = new Member(members.getString("memType"),members.getString("memberCode"),trainer,members.getString("memName"),a);
+		memberList.add(m);
+	}
+	
+}
+
+public static void getInvoices() throws SQLException{
+	getAddress();
+
+	ParkingPass p= null;
+	EquipmentRental r=null;
+	DayMembership d= null;
+	YearLongMembership y= null;
+	Invoice inv=null;
+	Address a= null;
+	try{
+		
+	    //STEP 2: Register JDBC driver 
+	    Class.forName("com.mysql.jdbc.Driver");
+
+	    //STEP 3: Open a connection
+	    conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+	    //STEP 4: Execute a query
+	    stmt = conn.createStatement();
+	 
+	    //retrieves customer type from customer code
+	   String sql="SELECT * FROM ParkingPass";
+	    ResultSet rs = stmt.executeQuery(sql);
+	    while (rs.next()){
+	    	
+	    	/**
+	    	 * 
+	    	 */
+	    	p = new ParkingPass(rs.getString("productCode"),"P", (rs.getDouble("subtotal")/rs.getDouble("quantity")));
+	    	assetMap.put(rs.getString("invoiceCode"), p);
+	    }
+	    sql= "SELECT * FROM EquipmentRental";
+	    rs= stmt.executeQuery(sql);
+	    while (rs.next()){
+	    	r= new EquipmentRental(rs.getString("productCode"),"R",(rs.getDouble("subtotal")/rs.getDouble("quantity")), rs.getString("rentalName"));
+	    	assetMap.put(rs.getString("invoiceCode"), r);
+
+	    }
+	    sql= "SELECT * FROM DayMembership";
+	    rs= stmt.executeQuery(sql);
+	    while (rs.next()){
+			    
+try{
+				
+			    //STEP 2: Register JDBC driver 
+			    Class.forName("com.mysql.jdbc.Driver");
+
+			    //STEP 3: Open a connection
+			    conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+			    //STEP 4: Execute a query
+			    stmt = conn.createStatement();
+			    
+			//retrieves customer type from customer code
+			   sql="SELECT street FROM Address where id= "+rs.getInt("address");
+			    rs = stmt.executeQuery(sql);
+			    while (rs.next()){
+			    
+			    for (Address add:addressList){
+			    	if((rs.getString("street")).contentEquals(add.getStreet())){
+			    	a=add;	
+			    	System.out.println("success");}
+			    	}
+			    }
+			    }
+			catch (Exception e){
+				e.printStackTrace();
+				errorLogger.log(e);
+			}   
+			/**
+			 * 
+			 */
+	    	d= new DayMembership (rs.getString("productCode"),"D",(rs.getDouble("subtotal")/rs.getDouble("quantity")),a,rs.getString("timeDate"));
+	    	assetMap.put(rs.getString("invoiceCode"), d);
+
+	    }
+	    sql= "SELECT * FROM YearMembership";
+	    rs= stmt.executeQuery(sql);
+	    while (rs.next()){
+		    
+try{
+			
+		    //STEP 2: Register JDBC driver 
+		    Class.forName("com.mysql.jdbc.Driver");
+
+		    //STEP 3: Open a connection
+		    conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+		    //STEP 4: Execute a query
+		    stmt = conn.createStatement();
+		    
+		//retrieves customer type from customer code
+		   sql="SELECT street FROM Address where id= "+rs.getInt("address");
+		    rs = stmt.executeQuery(sql);
+		    while (rs.next()){
+		    
+		    for (Address add:addressList){
+		    	if((rs.getString("street")).contentEquals(add.getStreet())){
+		    	a=add;	
+		    	System.out.println("success");}
+		    	}
+		    }
+		    }
+		catch (Exception e){
+			e.printStackTrace();
+			errorLogger.log(e);
+		}
+	    	
+	    	y= new YearLongMembership(rs.getString("productCode"),"Y",(rs.getDouble("subtotal")/rs.getDouble("quantity")),rs.getString("timeDateStart"),rs.getString("timeDateEnd"),a,rs.getString("membershipName"));
+	    	assetMap.put(rs.getString("invoiceCode"), y);
+
+	    }
+	}
+	    
+
+	
+	catch (Exception e){
+		e.printStackTrace();
+		errorLogger.log(e);
+	}
+}
+
+//TODO PROCESS INVOICES AND HASHMAP
+
+
+public static void main (String args[]) throws SQLException{
+	getMembers();
+}
+
+}
