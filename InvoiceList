@@ -1,0 +1,224 @@
+package com.sf.ext;
+
+import java.util.Comparator;
+import java.util.Iterator;
+
+import containers.Invoice;
+
+/**
+ *
+ * @author Nathan Pittman with assistance from Jonathen Trost
+ * @version 1
+ *
+ *
+ */
+
+public class InvoiceList implements Iterable<Invoice> {
+	private InvoiceNode start = new InvoiceNode(null);
+	private Comparator<Invoice> byTotal = new ComparatorTotal();
+	@SuppressWarnings("unused")
+	private Iterator<Invoice> it = this.iterator();
+	private int size = 0;
+
+	/**
+	 * Original Code written by Dr. Hasan for UNL CSCE 156 Code modified for use
+	 * in this program by Nathan Pittman
+	 *
+	 * @param newInvoice
+	 *            Invoice to be added to the list
+	 */
+	public void add(Invoice newInvoice) {
+		InvoiceNode newInvoiceNode = new InvoiceNode(newInvoice);
+
+		/* If the list is empty, then set the new node as the start node. */
+		if (size == 0) {
+			this.start = newInvoiceNode;
+			size++;
+		}
+		/*
+		 * If the list is has just one node (that is the start node), then
+		 * compare the new node with the start node, and add the new node in the
+		 * appropriate position. There will be two cases implemented by using
+		 * if-else statement.
+		 */
+		else if (size == 1) {
+			/*
+			 * Case 1: The new node is smaller than the start node. Therefore,
+			 * the start node should be the neighbor of the new node, and, the
+			 * new node should be set as the start node. Set the pointers as
+			 * follows. new node --> start node start = new
+			 */
+			if (this.byTotal.compare(newInvoiceNode.getInvoice(), this.start.getInvoice()) < 0) {
+				newInvoiceNode.setNext(this.start);
+				this.start = newInvoiceNode;
+				size++;
+			}
+			/*
+			 * Case 2: The new node is greater than the start node. Therefore,
+			 * the new node should be the neighbor of the start node. Set the
+			 * pointer as follows. start node --> new node
+			 */
+			else {
+				start.setNext(newInvoiceNode);
+				size++;
+			}
+		}
+
+		/*
+		 * If the list has more than two nodes, then there will be 3 cases to
+		 * consider.
+		 */
+		else {
+			/*
+			 * Case 1: the new node is smaller than the start node. Therefore,
+			 * the start node should be set as the next node of the new node,
+			 * and, the new node should be set as the start node. Set the
+			 * pointer as follows. new node --> start node start = new
+			 */
+			if (this.byTotal.compare(newInvoiceNode.getInvoice(), this.start.getInvoice()) < 0) {
+				newInvoiceNode.setNext(this.start);
+				this.start = newInvoiceNode;
+				size++;
+			}
+
+			/*
+			 * Case 2: the new node is smaller than the neighbor of the start
+			 * node. Therefore, the neighbor of the start node should be set as
+			 * the next node of the new node, and, the new node should be set as
+			 * the next node of the start node. Set the pointers as follows. new
+			 * node --> neighbor of start node start node --> new node
+			 */
+
+			else if (this.byTotal.compare(newInvoiceNode.getInvoice(), this.start.getNext().getInvoice()) < 0) {
+				newInvoiceNode.setNext(start.getNext());
+				start.setNext(newInvoiceNode);
+				size++;
+			}
+
+			/*
+			 * Case 3: the new node is greater than or equal to the neighbor of
+			 * the start node (or some subsequent neighbors of the start node).
+			 * Let's call it the "current node" (so, new node >= current node)
+			 * Find the next node of the "current node". Then, set the pointers
+			 * as follows. current node --> new node new node --> next node
+			 */
+
+			else {
+				InvoiceNode currentInvoiceNode = this.start;
+				InvoiceNode nextInvoiceNode = this.start.getNext();
+				while (nextInvoiceNode != null
+						&& this.byTotal.compare(newInvoiceNode.getInvoice(), nextInvoiceNode.getInvoice()) >= 0) {
+					currentInvoiceNode = nextInvoiceNode;
+					nextInvoiceNode = nextInvoiceNode.getNext();
+				}
+				currentInvoiceNode.setNext(newInvoiceNode);
+				newInvoiceNode.setNext(nextInvoiceNode);
+				size++;
+			}
+		}
+	}
+
+	/**
+	 * Removes an Invoice at specified position from the List, order is not
+	 * disrupted as order of List is maintained in add method
+	 *
+	 * @param position
+	 *            at which to remove
+	 */
+	public void remove(int position) {
+		if (position == 0 && this.start.getNext() != null) {
+			this.start = this.start.getNext();
+		} else if (position == 0 && this.start.getNext() == null) {
+			this.start = null;
+		} else {
+			InvoiceNode head = this.start;
+
+			for (int i = 0; i < position - 1; i++) {
+				head = head.getNext();
+			}
+
+			InvoiceNode next = head.getNext();
+			if (next != null) {
+				head.setNext(next.getNext());
+			} else {
+				head.setNext(null);
+			}
+		}
+	}
+
+	/**
+	 * Returns the Node at the specified position
+	 *
+	 * @param position
+	 *            to get node from
+	 * @return The corresponding node
+	 */
+	private InvoiceNode getInvoiceListNode(int position) {
+		InvoiceNode returnValue = null;
+		if (position == 0) {
+			returnValue = this.start;
+		} else {
+			int i = 0;
+			InvoiceNode current = this.start;
+			boolean flag = false;
+			while (current.getNext() != null || flag) {
+				if (i == position) {
+					returnValue = current;
+				} else {
+					i++;
+					current = current.getNext();
+				}
+			}
+		}
+		return returnValue;
+	}
+
+	/**
+	 * Returns the Invoice at specified position
+	 *
+	 * @param position
+	 *            in list
+	 * @return Invoice @ Position
+	 */
+
+	public Invoice getInvoice(int position) {
+		for (int i = 0; i < position; i++) {
+			if (i == position) {
+				return getInvoiceListNode(position).getInvoice();
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Prints every Invoice in the List
+	 */
+	public void print() {
+		InvoiceNode printer = this.start;
+		while (printer != null) {
+			Invoice node = printer.getInvoice();
+			node.print();
+			printer = printer.getNext();
+		}
+	}
+
+	public int getLength() {
+		int i = 1;
+		InvoiceNode counter = this.start;
+		if (counter == null) {
+			return 0;
+		}
+		while (counter.getNext() != null) {
+			i++;
+			counter = counter.getNext();
+		}
+		return i;
+
+	}
+
+	@Override
+	public Iterator<Invoice> iterator() {
+		// TODO Auto-generated method stub
+		return new invoiceIterator(this.start);
+	}
+}
