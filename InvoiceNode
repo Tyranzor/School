@@ -1,0 +1,31 @@
+package com.sf.ext;
+
+import containers.Invoice;
+
+/**
+ *
+ * @author Nathan Pittman with assistance from Jonathen Trost
+ * @version 1 Constructs and modifies InvoiceNodes within Invoice List class
+ */
+public class InvoiceNode {
+
+	private InvoiceNode next;
+	private Invoice invoice;
+
+	public InvoiceNode(Invoice item) {
+		this.invoice = item;
+		this.next = null;
+	}
+
+	public Invoice getInvoice() {
+		return invoice;
+	}
+
+	public InvoiceNode getNext() {
+		return next;
+	}
+
+	public void setNext(InvoiceNode next) {
+		this.next = next;
+	}
+}
