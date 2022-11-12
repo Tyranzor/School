@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  
+  
+<category>
+    <pattern>^</pattern>
+    <template>Sorry, I didn't get that, please try again</template>
+</category>
+
+  <category>
+  <pattern>HI</pattern>
+  <template>Hello, and welcome to the WGU computer career chat bot, please tell me some of your interests to get started. For example: coding, video game development, or building computers.
+</template>
+</category>
+
+
+
+<category><pattern>Hello</pattern><template><srai>HI</srai></template></category>
+<category><pattern>how are you</pattern><template><srai>HI</srai></template></category>
+<category><pattern>what do you do</pattern><template><srai>HI</srai></template></category>
+<category><pattern>how can you help</pattern><template><srai>HI</srai></template></category>
+<category><pattern>yo</pattern><template><srai>HI</srai></template></category>
+<category><pattern>sup</pattern><template><srai>HI</srai></template></category>
+<category><pattern>^ what's up ^</pattern><template><srai>HI</srai></template></category>
+<category><pattern>^ What's up ^</pattern><template><srai>HI</srai></template></category>
+<category><pattern>^ whats up ^</pattern><template><srai>HI</srai></template></category>
+<category><pattern>^ Whats up ^</pattern><template><srai>HI</srai></template></category>
+
+
+
+<category>
+    <pattern>coding</pattern>
+    <template>Coding is an excellent opportunity and many people are needed to write scripts or programs, which is more interesting or fun to you?</template>
+</category>
+
+<category><pattern>^ to code ^</pattern><template><srai>CODING</srai></template></category>
+<category><pattern>^ script ^</pattern><template><srai>CODING</srai></template></category>
+<category><pattern>^ code ^</pattern><template><srai>CODING</srai></template></category>
+<category><pattern>^ write code ^</pattern><template><srai>CODING</srai></template></category>
+<category><pattern>^ writing code ^</pattern><template><srai>CODING</srai></template></category>
+<category><pattern>^ scripts ^</pattern><template><srai>CODING</srai></template></category>
+
+
+
+
+
+
+<category>
+    <pattern>Engineering</pattern>
+    <template>Computer engineering is an exciting field which many people engage in, building the fastest and smartest computers in the world! Are you interested in designing or physically building computers?</template>
+</category>
+
+<category><pattern> ^ computer Engineering ^</pattern><template><srai>Engineering</srai></template></category>
+
+<category><pattern>^ assemble ^ </pattern><template><srai>Engineering</srai></template></category>
+
+<category><pattern>^ build computers ^</pattern><template><srai>Engineering</srai></template></category>
+
+<category><pattern>^ building computers ^</pattern><template><srai>Engineering</srai></template></category>
+
+<category><pattern>^ assemble ^</pattern><template><srai>Engineering</srai></template></category>
+
+<category>
+    <pattern>Game Development</pattern> 
+    <template>Game development is a great opppurtunity to create fun and interesting games and titles for people to enjoy, are you more interested in creating the environments and models or in making the art and design for the game?</template>
+</category>
+
+<category><pattern> ^ game dev ^</pattern><template><srai>GAME DEVELOPMENT</srai></template></category>
+<category><pattern> ^ games ^</pattern><template><srai>GAME DEVELOPMENT</srai></template></category>
+<category><pattern> ^ create games ^</pattern><template><srai>GAME DEVELOPMENT</srai></template></category>
+<category><pattern> ^ make games ^</pattern><template><srai>GAME DEVELOPMENT</srai></template></category>
+
+
+<category>
+    <pattern>programs</pattern>
+    <template>Then I recommend you look into jobs for computer programmers, an always in demand field.</template>
+</category>
+
+<category><pattern>^ programming ^</pattern><template><srai>PROGRAMS</srai></template></category>
+<category><pattern>^ making programs ^</pattern><template><srai>PROGRAMS</srai></template></category>
+<category><pattern>^ writing programs ^</pattern><template><srai>PROGRAMS</srai></template></category>
+<category><pattern>^ to program ^</pattern><template><srai>PROGRAMS</srai></template></category>
+
+<category>
+    <pattern>scripting</pattern>
+    <template>Scripting is hugely important part of web development, that would probably be a good fit for you. </template>
+</category>
+
+<category><pattern>^ writing scripts ^</pattern><template><srai>SCRIPTING</srai></template></category>
+<category><pattern>^ creating scripts ^</pattern><template><srai>SCRIPTING</srai></template></category>
+<category><pattern>^ scripting ^</pattern><template><srai>SCRIPTING</srai></template></category>
+<category><pattern>^ java script star ^</pattern><template><srai>SCRIPTING</srai></template></category>
+<category><pattern>^ HTML star ^</pattern><template><srai>SCRIPTING</srai></template></category>
+<category><pattern>^ html ^</pattern><template><srai>SCRIPTING</srai></template></category>
+
+<category>
+    <pattern>designing computers</pattern>
+    <template>Computer design engineering is a good fit for you then, I would recommend that or a circuit design engineer instead. </template>
+</category>
+
+<category><pattern>^ pcb ^</pattern><template><srai>DESIGNING COMPUTERS</srai></template></category>
+<category><pattern>^ creating computers ^</pattern><template><srai>DESIGNING COMPUTERS</srai></template></category>
+<category><pattern>^ circuits ^</pattern><template><srai>DESIGNING COMPUTERS</srai></template></category>
+<category><pattern>^ board layouts ^</pattern><template><srai>DESIGNING COMPUTERS</srai></template></category>
+
+<category>
+    <pattern>building computers</pattern>
+    <template>Then being a computer hardware engineer would be an excellent career opportunity for you.</template>
+</category>
+<category><pattern>^ building ^</pattern><template><srai>building computers</srai></template></category>
+
+<category>
+    <pattern> model design </pattern>
+    <template>Then I recommend becoming a computer rigging and model designer, you'll create models, environments and other assets for computer games and programs</template>
+</category>
+
+<category><pattern>^ sculpting ^</pattern><template><srai> model design </srai></template></category>
+<category><pattern>^ modelling ^</pattern><template><srai> model design </srai></template></category>
+<category><pattern>^ creating models ^</pattern><template><srai> model design </srai></template></category>
+<category><pattern>^ models ^</pattern><template><srai> model design </srai></template></category>
+<category><pattern>^ 3D modelling ^</pattern><template><srai> model design </srai></template></category>
+<category><pattern>^ rigging ^</pattern><template><srai> model design </srai></template></category>
+
+
+<category>
+    <pattern>art</pattern>
+    <template>In that case, graphic design or computer artist is a great fit for you. </template>
+</category>
+
+<category><pattern>^ artist</pattern><template><srai>ART</srai></template></category>
+<category><pattern>^ drawing</pattern><template><srai>ART</srai></template></category>
+<category><pattern>^ painting</pattern><template><srai>ART</srai></template></category>
+<category><pattern>^ creating art</pattern><template><srai>ART</srai></template></category>
+<category><pattern>^ graphic design</pattern><template><srai>ART</srai></template></category>
+
+
+<category>
+    <pattern>NOT SURE</pattern>
+    <template>There are lots of options available, do you like to code or create scripts, create computers or PCBs, draw or model or paint or even build computers?</template>
+</category>
+
+<category><pattern>^ unsure ^</pattern><template><srai>NOT SURE</srai></template></category>
+<category><pattern>^ dont know ^</pattern><template><srai>NOT SURE</srai></template></category>
+<category><pattern>^ can you help ^</pattern><template><srai>NOT SURE</srai></template></category>
+<category><pattern>^ suggestio n^</pattern><template><srai>NOT SURE</srai></template></category>
+<category><pattern>^ suggestions ^</pattern><template><srai>NOT SURE</srai></template></category>
+<category><pattern>^ what do I do ^</pattern><template><srai>NOT SURE</srai></template></category>
+
+</aiml>
