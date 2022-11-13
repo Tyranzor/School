@@ -142,7 +142,7 @@
 <category><pattern>^ unsure ^</pattern><template><srai>NOT SURE</srai></template></category>
 <category><pattern>^ dont know ^</pattern><template><srai>NOT SURE</srai></template></category>
 <category><pattern>^ can you help ^</pattern><template><srai>NOT SURE</srai></template></category>
-<category><pattern>^ suggestio n^</pattern><template><srai>NOT SURE</srai></template></category>
+<category><pattern>^ suggestion ^</pattern><template><srai>NOT SURE</srai></template></category>
 <category><pattern>^ suggestions ^</pattern><template><srai>NOT SURE</srai></template></category>
 <category><pattern>^ what do I do ^</pattern><template><srai>NOT SURE</srai></template></category>
 
